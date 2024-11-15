@@ -1,0 +1,19 @@
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    color: rgb(129, 124, 124);
+}
+.cards > img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover; 
+    
+}
+.cards {
+    width: 200px;
+    line-height: 1;
+}
