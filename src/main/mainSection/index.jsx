@@ -7,7 +7,7 @@ import "./index.css";
 
 const MainSection = () => {
   const [data, setData] = useState([]);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [movieDetail, setMovieDetail] = useState({});
 
 
@@ -15,13 +15,13 @@ const MainSection = () => {
     async function getMovies() {
       const resp = await fetch(URL, {
         headers: {
-          "Content-Type": "application.json",
+          "Content-Type": "application/json",
           "x-api-key": KEY,
         },
       });
       const data = await resp.json();
       setData(data.items);     
-      console.log(data, "data");
+   
     }
     getMovies();
   }, []);
@@ -29,12 +29,15 @@ const MainSection = () => {
   async function openModal(id) {
     const resp = await fetch(API_URL_MOVIE_DETALIS + id, {
       headers: {
-        "Content-Type": "application.json",
+        "Content-Type": "application/json",
         "x-api-key": KEY,
       },
     });
     const dataDetails = await resp.json();
     setMovieDetail(dataDetails);
+    console.log(dataDetails, "data");
+    
+    setOpen(true);
 }
 
   const handleCancel = () => {
@@ -47,7 +50,7 @@ const MainSection = () => {
       <div className="container">
         {data.map((item) => {
           return (
-            <div key={item.kinopoiskId} className="cards" onClick={openModal(item.kinopoiskId)}>            
+            <div key={item.kinopoiskId} className="cards" onClick={() => openModal(item.kinopoiskId)}>            
               <img src={item.posterUrlPreview} />
               <h3>{item.nameRu}</h3>
               <p>{item.genres.map((itemG) => itemG.genre).join(", ")}</p>           
@@ -55,7 +58,9 @@ const MainSection = () => {
           );
         })}
       </div>
-      <Modal open={open} onCancel={handleCancel} movieDetail={movieDetail}/>
+      <Modal open={open} onCancel={handleCancel} movieDetail={movieDetail}>
+        <img src={movieDetail.posterUrl}/>
+      </Modal>
     </>
   );
 };
