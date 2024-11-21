@@ -17,3 +17,11 @@
     width: 200px;
     line-height: 1;
 }
+.mainImg:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.mainSection{
+    position: relative;
+}

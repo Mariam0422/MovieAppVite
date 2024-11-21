@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;    
+}
+.modalMain{
+    width: 45%;
+    position: absolute; 
+    top: 150px;
+    left: 30%;
+    background: rgba(44, 43, 43, 0.863);
+    padding: 20px;
+}
+.modalMain img {
+    width: 35%;
+}
+.text_sectiion{
+    color: white;
+    margin-top: 10px;
+    text-align: start;
+    font-size: 18px;
+    font-weight: 500;
+}
+.text_sectiion > p > span {
+    color: #656ceb;
+}
+.close{
+    float: right;
+    color: white;
+    font-size: 24px;
+    border: 1px solid white;
+    width: 30px;
+    height: 30px;    
+    padding: 2px;
+    line-height: 26px;
+    border-radius: 50%;
+     cursor: pointer;
+}
+.close:hover{
+    transform: scale(1.1);
+}

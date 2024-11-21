@@ -2,6 +2,7 @@
     width: 70%;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
-    color: white;
+    margin: 10px auto;
+    color: white !important;
+    margin-bottom: 20px;
 }
