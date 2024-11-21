@@ -3,9 +3,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    width: 80%;
+    width: 1280px;
     margin: 0 auto;
     color: rgb(129, 124, 124);
+    min-height: 400px;
+    justify-content: center;
 }
 .cards > img {
     width: 200px;
@@ -24,4 +26,9 @@
 
 .mainSection{
     position: relative;
+}
+.empty-message{
+    color: white;
+    font-size: 24px;
+    margin-top: 200px;
 }
